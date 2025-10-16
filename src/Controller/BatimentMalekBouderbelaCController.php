@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/batiment_malek_bouderbela')]
 class BatimentMalekBouderbelaCController extends AbstractController
 {
-    // ✅ Afficher tous les bâtiments
+    
     #[Route('/', name: 'batimentmalekbouderbela_index')]
     public function index(EntityManagerInterface $em): Response
     {
@@ -23,7 +23,7 @@ class BatimentMalekBouderbelaCController extends AbstractController
         ]);
     }
 
-    // 👁️ Afficher un bâtiment spécifique
+    
     #[Route('/show/{id}', name: 'batimentmalekbouderbela_show')]
     public function show(int $id, EntityManagerInterface $em): Response
     {
@@ -38,7 +38,7 @@ class BatimentMalekBouderbelaCController extends AbstractController
         ]);
     }
 
-    // ➕ Ajouter un bâtiment
+    
     #[Route('/add', name: 'batimentmalekbouderbela_add')]
     public function add(Request $request, EntityManagerInterface $em): Response
     {
@@ -58,7 +58,7 @@ class BatimentMalekBouderbelaCController extends AbstractController
         return $this->render('batiment_malek_bouderbela_c/add.html.twig');
     }
 
-    // 📝 Modifier un bâtiment
+    
     #[Route('/update/{id}', name: 'batimentmalekbouderbela_update')]
     public function update(int $id, Request $request, EntityManagerInterface $em): Response
     {
@@ -84,7 +84,7 @@ class BatimentMalekBouderbelaCController extends AbstractController
         ]);
     }
 
-    // 🗑️ Supprimer un bâtiment
+    
     #[Route('/delete/{id}', name: 'batimentmalekbouderbela_delete')]
     public function delete(int $id, EntityManagerInterface $em): Response
     {
