@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du Bâtiment{% endblock %}
+
+{% block body %}
+<h1>Détails du bâtiment {{ batiment.nom }}</h1>
+
+<ul>
+    <li><strong>Nom :</strong> {{ batiment.nom }}</li>
+    <li><strong>Nombre d'étages :</strong> {{ batiment.nbEtages }}</li>
+    <li><strong>Date de construction :</strong> {{ batiment.dateConstruction|date('Y-m-d') }}</li>
+    <li><strong>Disponibilité :</strong> {{ batiment.disponibilite }}</li>
+</ul>
+
+<a href="{{ path('batimentmalekbouderbela_update', {'id': batiment.id}) }}">✏️ Modifier</a> |
+<a href="{{ path('batimentmalekbouderbela_delete', {'id': batiment.id}) }}">🗑️ Supprimer</a> |
+<a href="{{ path('batimentmalekbouderbela_index') }}">⬅ Retour à la liste</a>
+{% endblock %}

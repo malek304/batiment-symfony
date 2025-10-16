@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Bâtiment{% endblock %}
+
+{% block body %}
+<h1>Ajouter un Bâtiment</h1>
+
+<form method="post">
+    <label>Nom :</label><br>
+    <input type="text" name="nom"><br><br>
+
+    <label>Nombre d'étages :</label><br>
+    <input type="number" name="nbEtages"><br><br>
+
+    <label>Date de construction :</label><br>
+    <input type="date" name="dateConstruction"><br><br>
+
+    <label>Disponibilité :</label><br>
+    <input type="text" name="disponibilite"><br><br>
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+<a href="{{ path('batimentmalekbouderbela_index') }}">⬅ Retour à la liste</a>
+{% endblock %}

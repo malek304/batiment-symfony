@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Bâtiments{% endblock %}
+
+{% block body %}
+<h1>Liste des bâtiments</h1>
+
+<a href="{{ path('batimentmalekbouderbela_add') }}"> Ajouter un bâtiment</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Nb Étages</th>
+        <th>Date Construction</th>
+        <th>Disponibilité</th>
+        <th>Actions</th>
+    </tr>
+    {% for b in batiments %}
+        <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.nom }}</td>
+            <td>{{ b.nbEtages }}</td>
+            <td>{{ b.dateConstruction|date('Y-m-d') }}</td>
+            <td>{{ b.disponibilite }}</td>
+            <td>
+                <a href="{{ path('batimentmalekbouderbela_show', {'id': b.id}) }}"> Voir</a> |
+                <a href="{{ path('batimentmalekbouderbela_update', {'id': b.id}) }}"> Modifier</a> |
+                <a href="{{ path('batimentmalekbouderbela_delete', {'id': b.id}) }}"> Supprimer</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr><td colspan="6">Aucun bâtiment trouvé.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Bâtiment{% endblock %}
+
+{% block body %}
+<h1>Modifier un Bâtiment</h1>
+
+<form method="post">
+    <label>Nom :</label><br>
+    <input type="text" name="nom" value="{{ batiment.nom }}"><br><br>
+
+    <label>Nombre d'étages :</label><br>
+    <input type="number" name="nbEtages" value="{{ batiment.nbEtages }}"><br><br>
+
+    <label>Date de construction :</label><br>
+    <input type="date" name="dateConstruction" value="{{ batiment.dateConstruction ? batiment.dateConstruction|date('Y-m-d') : '' }}"><br><br>
+
+    <label>Disponibilité :</label><br>
+    <input type="text" name="disponibilite" value="{{ batiment.disponibilite }}"><br><br>
+
+    <button type="submit">Mettre à jour</button>
+</form>
+
+<a href="{{ path('batimentmalekbouderbela_index') }}">⬅ Retour à la liste</a>
+{% endblock %}
